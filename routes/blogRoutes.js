@@ -17,8 +17,12 @@ module.exports = app => {
     const redis = require('redis')
     const redisUrl = 'redis://127.0.0.1:6379'
     const client = redis.createClient()
+    const util = require('util')
+    client.get = util.promisify(client.get)
 
-    const cachedBlogs = client.get(req.user.id)
+    const cachedBlogs = await client.get(req.user.id)
+
+
     const blogs = await Blog.find({ _user: req.user.id })
 
     res.send(blogs)
