@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default ({ input, label, meta: { error, touched } }) => {
   return (
@@ -9,5 +9,5 @@ export default ({ input, label, meta: { error, touched } }) => {
         {touched && error}
       </div>
     </div>
-  );
-};
+  )
+}
