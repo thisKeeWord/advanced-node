@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import map from 'lodash/map';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchBlogs } from '../../actions';
+import React, { Component } from 'react'
+import map from 'lodash/map'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { fetchBlogs } from '../../actions'
 
 class BlogList extends Component {
   componentDidMount() {
-    this.props.fetchBlogs();
+    this.props.fetchBlogs()
   }
 
   renderBlogs() {
@@ -23,17 +23,17 @@ class BlogList extends Component {
             </div>
           </div>
         </div>
-      );
-    });
+      )
+    })
   }
 
   render() {
-    return <div>{this.renderBlogs()}</div>;
+    return <div>{this.renderBlogs()}</div>
   }
 }
 
 function mapStateToProps({ blogs }) {
-  return { blogs };
+  return { blogs }
 }
 
-export default connect(mapStateToProps, { fetchBlogs })(BlogList);
+export default connect(mapStateToProps, { fetchBlogs })(BlogList)
